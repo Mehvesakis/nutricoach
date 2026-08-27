@@ -1,0 +1,4 @@
+yapay_zeka_ortami/
+__pycache__/
+*.db
+.env
