@@ -8,7 +8,7 @@ from datetime import datetime
 import os
 
 # --- 1. YENİ VERİTABANI MİMARİSİ (LEVEL 2) ---
-SQLALCHEMY_DATABASE_URL = "sqlite:///./kalorisi.db"
+SQLALCHEMY_DATABASE_URL = "sqlite:///./nuticoach.db"
 engine = create_engine(SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False})
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
