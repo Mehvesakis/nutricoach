@@ -44,7 +44,7 @@ class KullaniciMesaji(BaseModel):
 
 # --- 2. GOOGLE API ---
 # BURAYA KENDİ ANAHTARINI YAPIŞTIRMAYI UNUTMA!
-API_KEY = os.getenv("GEMINI_API_KEY")
+API_KEY = os.getenv("GOOGLE_API_KEY")
 genai.configure(api_key=API_KEY)
 
 def kurallari_oku():
