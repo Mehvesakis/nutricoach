@@ -22,7 +22,7 @@ function App() {
 
   const oturumlarıYukle = async () => {
     try {
-      const response = await fetch('http://127.0.0.1:8000/oturumlar');
+      const response = await fetch('https://nutricoach-jay0.onrender.com/oturumlar');
       const data = await response.json();
       if (data.oturumlar && data.oturumlar.length > 0) {
         setOturumlar(data.oturumlar);
@@ -34,13 +34,12 @@ function App() {
   };
 
   const yeniOturumAc = async () => {
-    // 🚀 DÜZELTME: Eğer şu an ekranda açık olan sohbet zaten boşsa (sadece şefin 1 mesajı varsa), boş yere yeni klasör açma!
     if (oturumlar.length > 0 && mesajlar.length <= 1) {
       return; 
     }
 
     try {
-      const response = await fetch('http://127.0.0.1:8000/yeni_oturum', { method: 'POST' });
+      const response = await fetch('https://nutricoach-jay0.onrender.com/yeni_oturum', { method: 'POST' });
       const data = await response.json();
       setOturumlar((prev) => [{ id: data.id, baslik: data.baslik }, ...prev]);
       setAktifOturum(data.id);
@@ -50,7 +49,7 @@ function App() {
 
   const gecmisiYukle = async (id) => {
     try {
-      const response = await fetch(`http://127.0.0.1:8000/gecmis/${id}`);
+      const response = await fetch(`https://nutricoach-jay0.onrender.com/gecmis/${id}`);
       const data = await response.json();
       const eskiMesajlar = data.mesajlar.map(m => ({
         gonderen: m.rol === 'user' ? 'kullanici' : 'şef',
@@ -70,7 +69,7 @@ function App() {
     }
 
     try {
-      await fetch(`http://127.0.0.1:8000/temizle/${id}`, { method: 'DELETE' });
+      await fetch(`https://nutricoach-jay0.onrender.com/temizle/${id}`, { method: 'DELETE' });
       if (aktifSiliyoruz) {
         oturumlarıYukle(); 
       }
@@ -88,7 +87,7 @@ function App() {
     setYukleniyor(true);
 
     try {
-      const response = await fetch(`http://127.0.0.1:8000/sohbet/${aktifOturum}`, {
+      const response = await fetch(`https://nutricoach-jay0.onrender.com/sohbet/${aktifOturum}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ mesaj: input }),
@@ -96,7 +95,7 @@ function App() {
       const data = await response.json();
       setMesajlar((onceki) => [...onceki, { gonderen: 'şef', metin: data.cevap }]);
       
-      const listResponse = await fetch('http://127.0.0.1:8000/oturumlar');
+      const listResponse = await fetch('https://nutricoach-jay0.onrender.com/oturumlar');
       const listData = await listResponse.json();
       setOturumlar(listData.oturumlar);
 
