@@ -44,6 +44,7 @@ class KullaniciMesaji(BaseModel):
 
 # --- 2. GOOGLE API ---
 # BURAYA KENDİ ANAHTARINI YAPIŞTIRMAYI UNUTMA!
+import os
 API_KEY = os.getenv("GOOGLE_API_KEY")
 genai.configure(api_key=API_KEY)
 
