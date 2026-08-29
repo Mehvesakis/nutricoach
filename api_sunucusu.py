@@ -139,3 +139,10 @@ async def sohbeti_sil(oturum_id: int):
     db.commit()
     db.close()
     return {"mesaj": "Oturum silindi"}
+@app.get("/kasa-kontrol")
+async def kasa_kontrol():
+    import os
+    return {
+        "GOOGLE_API_KEY_durumu": "Dolu ve okunuyor ✅" if os.getenv("GOOGLE_API_KEY") else "Kasa BOŞ ❌",
+        "GEMINI_API_KEY_durumu": "Dolu ve okunuyor ✅" if os.getenv("GEMINI_API_KEY") else "Kasa BOŞ ❌"
+    }
