@@ -5,6 +5,7 @@ import google.generativeai as genai
 from sqlalchemy import create_engine, Column, Integer, String
 from sqlalchemy.orm import declarative_base, sessionmaker
 from datetime import datetime
+import os
 
 # --- 1. YENİ VERİTABANI MİMARİSİ (LEVEL 2) ---
 SQLALCHEMY_DATABASE_URL = "sqlite:///./kalorisi.db"
@@ -43,7 +44,7 @@ class KullaniciMesaji(BaseModel):
 
 # --- 2. GOOGLE API ---
 # BURAYA KENDİ ANAHTARINI YAPIŞTIRMAYI UNUTMA!
-API_KEY = "API_ANAHTARI_BURAYA_GELECEK"
+API_KEY = os.getenv("GEMINI_API_KEY")
 genai.configure(api_key=API_KEY)
 
 def kurallari_oku():
