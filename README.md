@@ -1,20 +1,24 @@
-# 🍏 NutriCoach AI - Full-Stack Yapay Zeka Beslenme Koçu
+# 🍏 NutriCoach - AI Beslenme ve Diyet Koçu
 
-NutriCoach, sporcular ve sağlıklı yaşam tutkunları için geliştirilmiş, RAG (Retrieval-Augmented Generation) destekli kişiselleştirilmiş bir yapay zeka asistanıdır. Standart bir kalori sayacının ötesine geçerek kuvvet antrenmanları ve kas onarımı için nokta atışı makro tavsiyeleri sunar.
+NutriCoach, kullanıcılarına kişiselleştirilmiş beslenme önerileri, antrenman sonrası öğün planlamaları ve diyet takibi sunan, yapay zeka destekli full-stack bir web uygulamasıdır. 
 
-## 🚀 Öne Çıkan Özellikler
-* **Çoklu Oturum (Multi-Session) Mimarisi:** Kullanıcıların sohbet geçmişini klasörler halinde (oturum bazlı) saklar.
-* **Akıllı RAG Sistemi:** Sisteme yüklenen özel diyet ve antrenman kuralları veritabanı üzerinden, halüsinasyondan uzak ve amaca yönelik yanıtlar üretir.
-* **Optimistic UI:** Silme ve yeni sohbet açma işlemlerinde veritabanını beklemeden anında tepki veren akıcı arayüz.
-* **Dinamik Başlıklandırma:** Kullanıcının attığı ilk mesaja göre sohbet oturumunun başlığını yapay zeka ile otomatik belirler.
+🚀 **[CANLI DEMO İÇİN TIKLAYIN](https://nutricoach-ykke.vercel.app)**
 
-## 🛠️ Teknoloji Yığını (Tech Stack)
-* **Frontend:** React, React-Markdown, Modern Soft-UI CSS
-* **Backend:** Python, FastAPI, SQLAlchemy
-* **Veritabanı:** SQLite (İlişkisel oturum ve mesaj tabloları)
-* **Yapay Zeka:** Google Gemini 3.6 Flash API
+## 🌟 Öne Çıkan Özellikler
+* **Özelleştirilmiş Yapay Zeka:** Google Gemini API ve özel prompt mühendisliği ile geliştirilmiş, beslenme kurallarına sadık sanal koç.
+* **Oturum Yönetimi:** Geçmiş sohbetleri hatırlayan ve farklı konular için yeni sekmeler açabilen akıllı hafıza.
+* **Modern Arayüz:** React ve Vite ile geliştirilmiş, hızlı ve duyarlı (responsive) tasarım.
+* **Bulut Mimarisi:** İstemci ve sunucu olarak ayrıştırılmış, Vercel ve Render üzerinde 7/24 çalışan bağımsız sistem.
 
-## 💻 Kurulum
+## 🛠️ Kullanılan Teknolojiler
+* **Yapay Zeka:** Google Gemini 1.5 Flash, Prompt Engineering
+* **Backend:** Python, FastAPI, SQLite, SQLAlchemy, Uvicorn
+* **Frontend:** React, Vite, React-Markdown
+* **Deployment:** Vercel (Frontend), Render (Backend)
+
+## ⚙️ Kurulum (Geliştiriciler İçin)
 Projeyi kendi bilgisayarınızda çalıştırmak için:
-1. Arka uç bağımlılıklarını kurun ve `api_sunucusu.py` dosyasını çalıştırın (Port 8000).
-2. Ön yüz klasörüne (`kalorisi-arayuz`) girip `npm install` ve ardından `npm run dev` komutlarını çalıştırın.
+1. Depoyu klonlayın: `git clone https://github.com/Mehvesakis/nutricoach.git`
+2. Backend bağımlılıklarını kurun: `pip install -r requirements.txt`
+3. Frontend bağımlılıklarını kurun: `cd kalorisi-arayuz && npm install`
+4. Backend için bir `.env` dosyası oluşturup `GOOGLE_API_KEY` değerinizi ekleyin.
